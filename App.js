@@ -5,10 +5,20 @@ import { StyleSheet, Text, View, Button } from 'react-native';
 export default function App() {
   const [count, setCount] = useState(0);
 
+  function increment() {
+    console.log("shit!");
+    setCount(count + 1);
+  }
+
+  function reset() {
+    setCount(0);
+  }
+
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <Button title="Press Me!"></Button>
+      <Text style={styles.count}>{count}</Text>
+      <Button title="+" onPress={increment} style={styles.button}></Button>
+      <Button title="reset" onPress={reset} style={styles.button}></Button>
       <StatusBar style="auto" />
     </View>
   );
@@ -17,8 +27,12 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: 'tomato',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  count: {
+    fontSize: 50,
+    color: 'skyblue',
   },
 });

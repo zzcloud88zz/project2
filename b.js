@@ -1,4 +1,4 @@
-import pi from "./a";
+import pi, { sayHello } from "./a";
 
 console.log(pi);
 sayHello();
